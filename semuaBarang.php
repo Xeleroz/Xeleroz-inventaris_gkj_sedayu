@@ -146,8 +146,38 @@ if (
             </li>
             
             </li>
-            
+
             <li
+                class="sidebar-item">
+                <a href="barangmasuk.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Barang Masuk</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item">
+                <a href="barangkeluar.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Barang Keluar</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item active">
+                <a href="semuabarang.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Daftar Barang</span>
+                </a>
+                
+
+            </li>
+            
+            <!-- <li
             class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
             <i class="bi bi-database"></i>
@@ -191,7 +221,7 @@ if (
             </ul>
             
 
-        </li>
+        </li> -->
         <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>

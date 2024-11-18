@@ -55,8 +55,8 @@ $sql = mysqli_query($conn, $query);
                 
     <div class="sidebar-header position-relative m-0">
         <div class="justify-content-between align-items-center">
-            <div class="logoBMKG">
-                <a href="index.php"><img src="./assets/compiled/png/logo.png" alt="Logo" style="width: 240px; height: auto;" srcset=""></a>
+        <div class="logoBMKG" style="display: flex; justify-content: center; align-items: center;">
+                <a href="index.php"><img src="./assets/compiled/png/logoGKJ.jpeg" alt="Logo" style="width: 150px; height: auto;" srcset=""></a>
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-4">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -104,7 +104,38 @@ $sql = mysqli_query($conn, $query);
                 
 
             </li>
+
             <li
+                class="sidebar-item">
+                <a href="barangmasuk.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Barang Masuk</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item active">
+                <a href="barangkeluar.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Barang Keluar</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item">
+                <a href="semuabarang.php" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Daftar Barang</span>
+                </a>
+                
+
+            </li>
+
+            <!-- <li
             class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
             <i class="bi bi-database"></i>
@@ -148,7 +179,7 @@ $sql = mysqli_query($conn, $query);
             </ul>
             
 
-        </li>
+        </li> -->
        
             
         <li
