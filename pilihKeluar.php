@@ -34,9 +34,9 @@ $sql = mysqli_query($conn, $query);
 
         toggleDark.addEventListener('click', function() {
             if (this.checked) {
-                logo.src = './assets/compiled/png/logo.png'; // Change to your dark logo path
+                logo.src = './assets/compiled/png/logoGKJ.jpeg'; // Change to your dark logo path
             } else {
-                logo.src = './assets/compiled/png/logoblack.png'; // Change to your light logo path
+                logo.src = './assets/compiled/png/logoGKJ.jpeg'; // Change to your light logo path
             }
             // Reload the page only if dark theme is selected
                 location.reload();
@@ -44,7 +44,7 @@ $sql = mysqli_query($conn, $query);
 
         // Check the initial theme setting on page load
         if (!toggleDark.checked) {
-            logo.src = './assets/compiled/png/logoblack.png'; // Set the initial logo based on light theme
+            logo.src = './assets/compiled/png/logoGKJ.jpeg'; // Set the initial logo based on light theme
         }
     };
 </script>
@@ -234,9 +234,6 @@ $sql = mysqli_query($conn, $query);
         >
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Tabel Data
-            </li>
             <li class="breadcrumb-item active" aria-current="page">Kelola</li>
           </ol>
         </nav>
