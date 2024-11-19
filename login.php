@@ -150,7 +150,7 @@ if (isset($_POST['login'])) {
                 </div>
                 <div class="col-lg-7 d-none d-lg-block">
                     <div id="auth-right" style="display: flex; justify-content: center; align-items: center; height: 100%; overflow: hidden; border-radius: 20px;">
-                        <img src="assets/compiled/jpg/fotobg.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="assets/compiled/jpg/fotobg.jpg" style="width: 0%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
 

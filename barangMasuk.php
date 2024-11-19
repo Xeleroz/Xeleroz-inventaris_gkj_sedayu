@@ -134,9 +134,9 @@
 
             <li
                 class="sidebar-item">
-                <a href="barangkeluar.php" class='sidebar-link'>
+                <a href="barangRusak.php" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
-                    <span>Barang Keluar</span>
+                    <span>Barang Rusak</span>
                 </a>
                 
 
