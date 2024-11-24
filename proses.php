@@ -36,7 +36,7 @@ if (isset($_POST["aksi"])) {
             if ($status == "masuk") {
                 header("location: barangMasuk.php");
             } elseif ($status == "keluar") {
-                header("location: barangKeluar.php");
+                header("location: barangRusak.php");
             }
         } else {
             echo $query;
@@ -86,7 +86,7 @@ if (isset($_POST["aksi"])) {
             if ($status == "masuk") {
                 header("location: barangMasuk.php");
             } elseif ($status == "keluar") {
-                header("location: barangKeluar.php");
+                header("location: barangRusak.php");
             }
         } else {
             echo "Error updating record: " . mysqli_error($conn);
