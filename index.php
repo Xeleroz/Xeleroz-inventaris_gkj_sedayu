@@ -466,7 +466,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
     <div class="col-12">
         <div class="card mb-3">
             <div class="card-header">
-                <h4>Data Barang Keluar Masuk</h4>
+                <h4>Data Barang Masuk & Rusak</h4>
                 <div class="btn-group mb-1">
     <div class="dropdown">
         <!-- Replace "Pilih Tahun" with the selected year or "Semua Tahun" if no year is selected -->
@@ -518,7 +518,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
     <div class="col-12">
         <div class="card mb-3">
             <div class="card-header">
-                <h4>Data Barang Keluar</h4>
+                <h4>Data Barang Rusak</h4>
             </div>
             <div class="card-body">
                 <div id="chartkeluar"></div>
@@ -531,7 +531,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0">Barang Masuk/Keluar Terakhir</h5>
+                <h5 class="mb-0">Barang Masuk/Rusak Terakhir</h5>
                 <p class="mt-3">10 Barang Terakhir</p>
             </div>
         <div class="card-body">
@@ -541,7 +541,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
                         <tr>
                             <!-- Tambahkan kolom sesuai dengan data yang ingin ditampilkan -->
                             <th>Tanggal Masuk</th>
-                            <th>Tanggal Keluar</th>
+                            <th>Tanggal Rusak</th>
                             <th>Nama Barang</th>
                             <th>Jenis Peralatan</th>
                             <th>Merk</th>
