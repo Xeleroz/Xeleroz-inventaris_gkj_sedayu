@@ -332,19 +332,21 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item active ">
+                class="sidebar-item active">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
 
+            </li>
+
             <li
                 class="sidebar-item">
                 <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-list-ul"></i>
                     <span>Barang Masuk</span>
                 </a>
                 
@@ -354,7 +356,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
             <li
                 class="sidebar-item">
                 <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trash3-fill"></i>
                     <span>Barang Rusak</span>
                 </a>
                 
@@ -364,71 +366,24 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
             <li
                 class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
 
             </li>
             
-            <!-- <li
-            class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
-            <i class="bi bi-database"></i>
-                <span>Daftar Barang</span>
-            </a>
-            
-            <ul class="submenu ">
-                
-                <li class="submenu-item  ">
-                    <a href="namaBarang.php" class="submenu-link">Nama Barang</a>
-                </li>
-                
-            </ul>
-            
-
-        </li>
-            
-            <li
-            class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
-                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                <span>Tabel Data</span>
-            </a>
-            
-            <ul class="submenu ">
-                
-                
-                <li class="submenu-item  ">
-                    <a href="barangMasuk.php" class="submenu-link">Barang Masuk</a>
-                    
-                </li>
-                
-                <li class="submenu-item  ">
-                    <a href="barangKeluar.php" class="submenu-link">Barang Keluar</a>
-                    
-                </li>
-                
-                <li class="submenu-item  ">
-                    <a href="semuaBarang.php" class="submenu-link">Semua Barang</a>
-                    
-                </li>
-                
-            </ul>
-            
-
-        </li> -->
 
         <li
-                class="sidebar-item has-sub">
+                class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-person-circle"></i>
                     <span>Akun</span>
                 </a>
                 
-                <ul class="submenu">
+                <ul class="submenu ">
                     
-                    <li class="submenu-item ">
+                    <li class="submenu-item  ">
                         <a href="akun.php" class="submenu-link">Keamanan</a>
                         
                     </li>
@@ -543,9 +498,6 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
                             <th>Tanggal Masuk</th>
                             <th>Tanggal Rusak</th>
                             <th>Nama Barang</th>
-                            <th>Jenis Peralatan</th>
-                            <th>Merk</th>
-                            <th>SN</th>
                             <th>Asal Perolehan</th>
                             <th>Keterangan</th>
                             <th>Status</th>
@@ -579,9 +531,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
                 }
             ?></td>
             <td><?php echo $result["nama_barang"]; ?></td>
-            <td><?php echo $result["jenis_peralatan"]; ?></td>
-            <td><?php echo $result["merk"]; ?></td>
-            <td><?php echo $result["sn"]; ?></td>
+           
             <td><?php echo $result["asal_perolehan"]; ?></td>
             <td><?php echo $result["keterangan"]; ?></td>
             <td>
@@ -589,7 +539,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
                     if ($result["status"] == "masuk") {
                         echo '<span class="badge bg-success">Masuk</span>';
                     } elseif ($result["status"] == "keluar") {
-                        echo '<span class="badge bg-danger">Keluar</span>';
+                        echo '<span class="badge bg-danger">Rusak</span>';
                     } else {
                         echo $result["status"];
                     }

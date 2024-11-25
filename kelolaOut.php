@@ -3,8 +3,6 @@ include "koneksi.php";
 require "vendor/autoload.php";
 include "auth.php";
 
-// $query = "SELECT * FROM masuk;";
-// $sql = mysqli_query($conn, $query);
 $no = 0;
 ?>
 
@@ -191,10 +189,7 @@ $no = 0;
         } else {
             echo $result["status"]; // Display status as it is if neither "masuk" nor "keluar"
         } ?></p>
-
-                            
-
-                            
+             
                         </div>
                     </div>
                 </div>
@@ -206,7 +201,7 @@ $no = 0;
                         <form action="proses.php" method="POST">
                         <input type="hidden" value="<?php echo $result["id"]; ?>" name="id">
     <div class="form-group">
-        <label for="tanggal" class="form-label">Tanggal Keluar</label>
+        <label for="tanggal_keluar" class="form-label">Tanggal Rusak</label>
         <input type="date" name="tanggal_keluar" id="tanggal_keluar" class="form-control" placeholder="Tanggal Keluar" required>
     </div>
     <div class="form-group">

@@ -138,10 +138,6 @@ if(isset($_POST['login'])){
                                     <label class="form-check-label text-gray-600 mt-1" for="flexCheckDefault">Ingat Saya</label>
                                 </div>
                             </div>
-                            <div class="col"></div>
-                            <div class="col-auto">
-                                <p class="mb-0"><a class="font-bold" href="https://wa.me/6285743688869">Lupa password?</a></p>
-                            </div>
                         </div>
                         <!-- SUBMIT -->
                         <input type="submit" name="login" class="btn btn-primary btn-block btn-lg shadow-lg mt-5" value="Login"></input>

@@ -115,19 +115,19 @@ if (
             <li
                 class="sidebar-item ">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
-            
+
             </li>
 
             <li
                 class="sidebar-item">
                 <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-list-ul"></i>
                     <span>Barang Masuk</span>
                 </a>
                 
@@ -137,7 +137,7 @@ if (
             <li
                 class="sidebar-item">
                 <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trash3-fill"></i>
                     <span>Barang Rusak</span>
                 </a>
                 
@@ -147,12 +147,14 @@ if (
             <li
                 class="sidebar-item active">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
 
             </li>
+            
+
         <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -171,8 +173,6 @@ if (
                 
 
             </li>
-       
-           
             
         <li class="sidebar-item">
             <a id="background" href="logout.php" class="btn btn-outline-danger btn-block">
@@ -324,7 +324,7 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
         <?php if ($row["status"] == "masuk") {
             echo '<span class="badge bg-success">Masuk</span>';
         } elseif ($row["status"] == "keluar") {
-            echo '<span class="badge bg-danger">Keluar</span>';
+            echo '<span class="badge bg-danger">Rusak</span>';
         } else {
             echo $row["status"]; 
         } ?>

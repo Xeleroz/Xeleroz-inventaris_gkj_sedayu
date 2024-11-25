@@ -93,17 +93,19 @@ if(isset($_POST['change-p'])){
             <li
                 class="sidebar-item ">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
 
+            </li>
+
             <li
                 class="sidebar-item">
                 <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-list-ul"></i>
                     <span>Barang Masuk</span>
                 </a>
                 
@@ -113,7 +115,7 @@ if(isset($_POST['change-p'])){
             <li
                 class="sidebar-item">
                 <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trash3-fill"></i>
                     <span>Barang Rusak</span>
                 </a>
                 
@@ -123,7 +125,7 @@ if(isset($_POST['change-p'])){
             <li
                 class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
@@ -132,15 +134,15 @@ if(isset($_POST['change-p'])){
             
 
         <li
-                class="sidebar-item active has-sub">
+                class="sidebar-item  has-sub active">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-person-circle"></i>
                     <span>Akun</span>
                 </a>
                 
-                <ul class="submenu active">
+                <ul class="submenu ">
                     
-                    <li class="submenu-item active ">
+                    <li class="submenu-item  ">
                         <a href="akun.php" class="submenu-link">Keamanan</a>
                         
                     </li>

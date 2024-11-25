@@ -9,13 +9,9 @@ if (isset($_POST["aksi"])) {
         $tanggal_keluar = $_POST["tanggal_keluar"];
         $id_barang = $_POST["id_barang"];
         $nama_barang = $_POST["nama_barang"];
-        $jenis_peralatan = $_POST["jenis_peralatan"];
-        $merk = $_POST["merk"];
-        $sn = $_POST["sn"];
         $asal_perolehan = $_POST["asal_perolehan"];
         $harga = $_POST["harga"];
         $status = $_POST["status"];
-        $lokasi = $_POST["lokasi"]; // Added lokasi
         $teknisi = $_POST["teknisi"]; // Added teknisi
         $foto = $_FILES["foto"]["name"];
         $file = $_FILES["file"]["name"];
@@ -36,7 +32,7 @@ if (isset($_POST["aksi"])) {
             if ($status == "masuk") {
                 header("location: barangMasuk.php");
             } elseif ($status == "keluar") {
-                header("location: barangRusak.php");
+                header("location: barangKeluar.php");
             }
         } else {
             echo $query;

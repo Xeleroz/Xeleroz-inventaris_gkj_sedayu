@@ -65,26 +65,26 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar-menu">
-            <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+            
+            <li
+                class="sidebar-item ">
+                <a href="index.php" class='sidebar-link'>
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Dashboard</span>
+                </a>
                 
-                <li
-                    class="sidebar-item ">
-                    <a href="index.php" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Dashboard</span>
-                    </a>
-                    
 
-                </li>
-                
-                </li>
+            </li>
 
-                <li
+            </li>
+
+            <li
                 class="sidebar-item active">
                 <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-list-ul"></i>
                     <span>Barang Masuk</span>
                 </a>
                 
@@ -94,7 +94,7 @@
             <li
                 class="sidebar-item">
                 <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trash3-fill"></i>
                     <span>Barang Rusak</span>
                 </a>
                 
@@ -104,61 +104,15 @@
             <li
                 class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
 
             </li>
             
-            
-            <!-- <li
-            class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
-            <i class="bi bi-database"></i>
-                <span>Data Master</span>
-            </a>
-            
-            <ul class="submenu ">
-                
-                <li class="submenu-item  ">
-                    <a href="namaBarang.php" class="submenu-link">Nama Barang</a>
-                    
-                </li>
-                
-            </ul>
-            
-            
-                
-                <li
-                class="sidebar-item active has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                    <span>Tabel Data</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item active ">
-                        <a href="barangMasuk.php" class="submenu-link">Barang Masuk</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="barangKeluar.php" class="submenu-link">Barang Keluar</a>
-                        
-                    </li>
-                    <li class="submenu-item  ">
-                        <a href="semuaBarang.php" class="submenu-link">Semua Barang</a>
-                        
-                    </li>
-                    
-                </ul>
-                
 
-            </li> -->
-
-            <li
+        <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-person-circle"></i>

@@ -97,37 +97,33 @@ if (isset($_GET["ubah"])) {
             <li
                 class="sidebar-item  ">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
+            <li class="sidebar-item <?php echo (isset($_GET['status']) && $_GET['status'] === 'masuk') ? 'active' : ''; ?>">
+    <a href="barangmasuk.php" class='sidebar-link'>
+        <i class="bi bi-list-ul"></i>
+        <span>Barang Masuk</span>
+    </a>
+</li>
 
-            <li
-                class="sidebar-item active">
-                <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Barang Masuk</span>
-                </a>
-                
+<li class="sidebar-item <?php echo (isset($_GET['status']) && $_GET['status'] === 'keluar') ? 'active' : ''; ?>">
+    <a href="barangRusak.php" class='sidebar-link'>
+        <i class="bi bi-trash3-fill"></i>
+        <span>Barang Rusak</span>
+    </a>
+</li>
 
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Barang Rusak</span>
-                </a>
-                
 
             </li>
 
             <li
                 class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
@@ -183,7 +179,7 @@ if (isset($_GET["ubah"])) {
         if ($status === 'masuk') {
             echo '<h3>Data Barang Masuk</h3>';
         } elseif ($status === 'keluar') {
-            echo '<h3>Data Barang Keluar</h3>';
+            echo '<h3>Data Barang Rusak</h3>';
         }
     } else {
         echo '<h3>Data Barang</h3>';
@@ -222,7 +218,7 @@ if (isset($_GET["ubah"])) {
         if ($status === 'masuk') {
             echo '<h4 class="card-title">Tambahkan Barang Masuk</h4>';
         } elseif ($status === 'keluar') {
-            echo '<h4 class="card-title">Tambahkan Barang Keluar</h4>';
+            echo '<h4 class="card-title">Tambahkan Barang Rusak</h4>';
         }
     } else {
         // Default title if status is not provided in the URL
@@ -236,8 +232,6 @@ if (isset($_GET["ubah"])) {
               <form method="POST" action="proses.php" class="form" enctype="multipart/form-data">
                 <input type="hidden" value="<?php echo $id; ?>" name="id">
                 <input type="hidden" name="status" value="<?php echo isset($_GET['status']) ? $_GET['status'] : ''; ?>">
-                <input type="hidden" name="lokasi" value="">
-                 <input type="hidden" name="teknisi" value="">
                  <input type="hidden" name="id_barang" id="id_barang">
 
 
@@ -389,31 +383,11 @@ if (isset($_GET["ubah"])) {
 
                   
                   <?php if (isset($_GET["status"]) && $_GET["status"] === 'keluar') { ?>
-        <div class="col-md-6 col-12">
-            <div class="form-group">
-                <label for="lokasi" class="form-label">Lokasi</label>
-                <input type="text" id="lokasi" class="form-control" name="lokasi" placeholder="Lokasi">
-            </div>
-        </div>
-        <div class="col-md-6 col-12">
-            <div class="form-group">
-                <label for="teknisi" class="form-label">Teknisi</label>
-                <input type="text" id="teknisi" class="form-control" name="teknisi" placeholder="Teknisi">
-            </div>
-        </div>
     <?php } ?>
                   <div class="col-md-6 col-12">
                   <div class="form-group">
     <label for="foto" class="form-label">Foto Barang</label>
     <input type="file" id="foto" class="form-control" name="foto" placeholder="Foto Barang" accept="image/*" onchange="validateFileSize(this)" value="<?php echo $foto; ?>"/>
-</div>
-
-                  </div>
-
-                  <div class="col-md-6 col-12">
-                  <div class="form-group">
-    <label for="file" class="form-label">File Tambahan</label>
-    <input type="file" id="file" class="form-control" name="file" placeholder="File Tambahan" onchange="validateFileSize1(this)"/>
 </div>
 
                   </div>

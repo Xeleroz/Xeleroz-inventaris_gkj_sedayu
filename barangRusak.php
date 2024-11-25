@@ -67,7 +67,7 @@ $no = 0;
             <li
                 class="sidebar-item ">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
@@ -79,7 +79,7 @@ $no = 0;
             <li
                 class="sidebar-item">
                 <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-list-ul"></i>
                     <span>Barang Masuk</span>
                 </a>
                 
@@ -89,7 +89,7 @@ $no = 0;
             <li
                 class="sidebar-item active">
                 <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trash3-fill"></i>
                     <span>Barang Rusak</span>
                 </a>
                 
@@ -99,7 +99,7 @@ $no = 0;
             <li
                 class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
@@ -173,7 +173,7 @@ $no = 0;
         <div class="card">
         <div class="card-header">
         <!-- <a href="kelola.php?status=keluar" class="btn icon icon-left btn-warning"><i data-feather="plus"></i>Tambah Barang</a> -->
-        <a href="pilihKeluar.php" class="btn icon icon-left btn-warning"><i data-feather="plus"></i>Tambah Barang Keluar</a>
+        <a href="pilihKeluar.php" class="btn icon icon-left btn-warning"><i data-feather="plus"></i>Tambah Barang Rusak</a>
                 <button id="btnPrintDetail" class="btn icon icon-left btn-primary"><i data-feather="printer"></i> Print</button>
                 <button id="btnExcel" class="btn icon icon-left btn-success"><i class="bi bi-file-earmark-excel"></i> Download Excel</button>
                 <button id="btnPDF" class="btn icon icon-left btn-danger"><i class="bi bi-file-earmark-pdf"></i> Download PDF</button>
