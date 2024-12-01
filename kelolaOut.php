@@ -49,51 +49,33 @@ $no = 0;
                 </div>
             </div>
         </div>
-    <div class="sidebar-menu">
+        <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
             
             <li
                 class="sidebar-item ">
                 <a href="index.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-house-door-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
-            
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Barang Masuk</span>
-                </a>
-                
-
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Barang Rusak</span>
-                </a>
-                
 
             </li>
 
             <li
                 class="sidebar-item active">
                 <a href="semuabarang.php" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
                 </a>
                 
 
             </li>
+            
+
         <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -112,8 +94,6 @@ $no = 0;
                 
 
             </li>
-       
-           
             
         <li class="sidebar-item">
             <a id="background" href="logout.php" class="btn btn-outline-danger btn-block">
@@ -121,7 +101,6 @@ $no = 0;
                 <span>Logout</span>
             </a>
         </li>
-        
         
             
         </ul>
@@ -205,10 +184,6 @@ $no = 0;
         <input type="date" name="tanggal_keluar" id="tanggal_keluar" class="form-control" placeholder="Tanggal Keluar" required>
     </div>
     <div class="form-group">
-        <label for="teknisi" class="form-label">Penanggungjawab</label>
-        <input type="text" name="teknisi" id="teknisi" class="form-control" placeholder="Nama Teknisi" required>
-    </div>
-    <div class="form-group">
         <label for="keterangan" class="form-label">Keterangan</label>
         <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan" required>
     </div>
@@ -218,7 +193,7 @@ $no = 0;
                 <i data-feather="save"></i>
                 Keluarkan
             </button>
-            <a href="barangRusak.php" type="button" class="btn icon icon-left btn-danger me-1 mb-1" id="batal">
+            <a href="semuabarang.php" type="button" class="btn icon icon-left btn-danger me-1 mb-1" id="batal">
                 <i class="bi bi-reply"></i>
                 Batal
             </a>

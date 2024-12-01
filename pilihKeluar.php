@@ -68,28 +68,9 @@ $sql = mysqli_query($conn, $query);
 
             </li>
 
-            <li
-                class="sidebar-item">
-                <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-list-ul"></i>
-                    <span>Barang Masuk</span>
-                </a>
-                
-
-            </li>
 
             <li
                 class="sidebar-item active">
-                <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-trash3-fill"></i>
-                    <span>Barang Rusak</span>
-                </a>
-                
-
-            </li>
-
-            <li
-                class="sidebar-item">
                 <a href="semuabarang.php" class='sidebar-link'>
                     <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>

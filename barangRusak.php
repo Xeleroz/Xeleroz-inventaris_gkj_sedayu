@@ -21,6 +21,20 @@ $no = 0;
 
   <link rel="stylesheet" href="./assets/compiled/css/table-datatable-jquery.css">
   <link rel="stylesheet" href="./assets/compiled/css/app.css">
+    <script src="assets/extensions/jquery/jquery.min.js"></script>
+    <script src="assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/static/js/pages/datatables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.min.js"></script>
 </head>
 
 <style>
@@ -181,6 +195,45 @@ $no = 0;
             </div>
             <div class="card-header">
                 
+            <script>
+                        $(document).ready(function() {
+                            table = $('#table1').DataTable({
+                            dom: '<"d-flex justify-content-between"lf>tip',
+                                aLengthMenu: [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]],
+                                buttons: [
+                            {
+                                extend: 'excelHtml5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            },
+                            {
+                                extend: 'print',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            },
+                            {
+                                extend: 'pdfHtml5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            }
+                        ]
+
+                            });
+                            $('#btnExcel').on('click', function() {
+                                table.button(0).trigger(); 
+                            });
+                            $('#btnPrintDetail').on('click', function() {
+                                table.button(1).trigger(); 
+                            });
+                            $('#btnPDF').on('click', function() {
+                                table.button(2).trigger(); 
+                            });
+                        });
+                    </script> 
+
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -352,23 +405,6 @@ $no = 0;
     
     <script src="assets/compiled/js/app.js"></script>
     
-
-    
-<script src="assets/extensions/jquery/jquery.min.js"></script>
-<script src="assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="assets/static/js/pages/datatables.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.min.js"></script>
-
 <script>
     function confirmDelete(id, origin) {
         $('#danger').modal('show');
@@ -377,63 +413,6 @@ $no = 0;
 </script>
 
 
-<script>
-    var table;
-    $(document).ready(function(){
-        table = $('#table1').DataTable({
-            "bDestroy": true,
-            "paging": false,
-            search: {
-        return: false
-    },
-            "aLengthMenu": [[25,50,100,200,-1], [25,50,100,200, "All"]],
-            iDisplayLength: 25,
-            dom: 'lrt',
-            buttons: [
-                {
-                    extend: 'excel',
-                    class: 'buttons-excel',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 2, 3,4,5,6,7,8]
-                    }
-                },
-                {
-                    extend: 'print',
-                    class: 'buttons-print',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 2, 3,4,5,6,7,8]
-                    }
-                },
-                {
-                    extend: 'pdf',
-                    class: 'buttons-pdf',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 2, 3,4,5,6,7,8]
-                    }
-                }, 'colvis'
-            ]
-        });
-    });
-
-    $('#btnExcel').on('click', function() {
-        table.button('.buttons-excel').trigger();
-    });
-    $('#btnPrintDetail').on('click', function() {
-        table.button('.buttons-print').trigger();
-    });
-    $('#btnPDF').on('click', function() {
-        table.button('.buttons-pdf').trigger();
-    });
-</script> 
 </body>
 
 </html>

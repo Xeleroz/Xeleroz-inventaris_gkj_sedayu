@@ -9,9 +9,13 @@ if (isset($_POST["aksi"])) {
         $tanggal_keluar = $_POST["tanggal_keluar"];
         $id_barang = $_POST["id_barang"];
         $nama_barang = $_POST["nama_barang"];
+        $jenis_peralatan = $_POST["jenis_peralatan"];
+        $merk = $_POST["merk"];
+        $sn = $_POST["sn"];
         $asal_perolehan = $_POST["asal_perolehan"];
         $harga = $_POST["harga"];
         $status = $_POST["status"];
+        $lokasi = $_POST["lokasi"]; // Added lokasi
         $teknisi = $_POST["teknisi"]; // Added teknisi
         $foto = $_FILES["foto"]["name"];
         $file = $_FILES["file"]["name"];
@@ -30,9 +34,9 @@ if (isset($_POST["aksi"])) {
 
         if ($sql) {
             if ($status == "masuk") {
-                header("location: barangMasuk.php");
+                header("location: semuabarang.php");
             } elseif ($status == "keluar") {
-                header("location: barangKeluar.php");
+                header("location: semuabarang.php");
             }
         } else {
             echo $query;
@@ -93,7 +97,7 @@ if (isset($_POST["aksi"])) {
 
 if (isset($_GET["hapus"])) {
     $id = $_GET["hapus"];
-    $origin = isset($_GET["origin"]) ? $_GET["origin"] : "barangMasuk.php";
+    $origin = isset($_GET["origin"]) ? $_GET["origin"] : "semuabarang.php";
 
     $queryShow = "SELECT * FROM masuk WHERE id = '$id';";
     $sqlShow = mysqli_query($conn, $queryShow);
@@ -108,5 +112,19 @@ if (isset($_GET["hapus"])) {
         header("location: $origin");
     } else {
         echo $query;
+    }
+}
+
+if ($_POST["aksi"] == "keluar") {
+    $id = $_POST["id"];
+
+    // $sql = "SELECT * FROM masuk WHERE id = '$id'";
+    $query = "UPDATE masuk SET status = 'keluar' WHERE id = '$id'";
+    $sql = mysqli_query($conn, $query);
+
+    if ($sql) {
+        header("location: semuabarang.php");
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
     }
 }

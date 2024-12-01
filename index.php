@@ -343,25 +343,6 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
 
             </li>
 
-            <li
-                class="sidebar-item">
-                <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-list-ul"></i>
-                    <span>Barang Masuk</span>
-                </a>
-                
-
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-trash3-fill"></i>
-                    <span>Barang Rusak</span>
-                </a>
-                
-
-            </li>
 
             <li
                 class="sidebar-item">

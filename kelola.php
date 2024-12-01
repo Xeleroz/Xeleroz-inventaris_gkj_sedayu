@@ -103,25 +103,10 @@ if (isset($_GET["ubah"])) {
                 
 
             </li>
-            <li class="sidebar-item <?php echo (isset($_GET['status']) && $_GET['status'] === 'masuk') ? 'active' : ''; ?>">
-    <a href="barangmasuk.php" class='sidebar-link'>
-        <i class="bi bi-list-ul"></i>
-        <span>Barang Masuk</span>
-    </a>
-</li>
-
-<li class="sidebar-item <?php echo (isset($_GET['status']) && $_GET['status'] === 'keluar') ? 'active' : ''; ?>">
-    <a href="barangRusak.php" class='sidebar-link'>
-        <i class="bi bi-trash3-fill"></i>
-        <span>Barang Rusak</span>
-    </a>
-</li>
-
-
             </li>
 
             <li
-                class="sidebar-item">
+                class="sidebar-item active">
                 <a href="semuabarang.php" class='sidebar-link'>
                     <i class="bi bi-database-fill"></i>
                     <span>Daftar Barang</span>
@@ -206,126 +191,21 @@ if (isset($_GET["ubah"])) {
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-          <?php
-if (isset($_GET["ubah"])) {
-    // If editing an existing entry
-    echo '<h4 class="card-title">Edit Data Barang</h4>';
-} else {
-    // If adding a new entry
-    if (isset($_GET['status'])) {
-        // Check if status is provided in the URL
-        $status = $_GET['status'];
-        if ($status === 'masuk') {
-            echo '<h4 class="card-title">Tambahkan Barang Masuk</h4>';
-        } elseif ($status === 'keluar') {
-            echo '<h4 class="card-title">Tambahkan Barang Rusak</h4>';
-        }
-    } else {
-        // Default title if status is not provided in the URL
-        echo '<h4 class="card-title">Tambahkan Barang</h4>';
-    }
-}
-?>
-          </div>
+          <h4 class="card-title">Tambahkan Barang Masuk</h4>
           <div class="card-content">
             <div class="card-body">
               <form method="POST" action="proses.php" class="form" enctype="multipart/form-data">
                 <input type="hidden" value="<?php echo $id; ?>" name="id">
                 <input type="hidden" name="status" value="<?php echo isset($_GET['status']) ? $_GET['status'] : ''; ?>">
                  <input type="hidden" name="id_barang" id="id_barang">
-
-
-
                  <div class="row">
-    <div class="col-md-6 col-12">
+    <div class="col-md-6 col-6">
         <div class="form-group">
-            <?php
-            if (isset($_GET["status"]) && $_GET["status"] === 'keluar') {
-                $tanggal_keluar = isset($tanggal_keluar) ? $tanggal_keluar : ''; // Check if $tanggal_keluar is set
-            ?>
-                <label for="tanggal_keluar" class="form-label">Tanggal Keluar</label>
-                <input type="date" id="tanggal_keluar" class="form-control" name="tanggal_keluar" value="<?php echo $tanggal_keluar; ?>" required>
-            <?php } else {
-                $tanggal = isset($tanggal) ? $tanggal : ''; // Check if $tanggal is set
-            ?>
                 <label for="tanggal" class="form-label">Tanggal Masuk</label>
                 <input type="date" id="tanggal" class="form-control" name="tanggal" value="<?php echo $tanggal; ?>" required>
                 <input type="hidden" name="tanggal_keluar" value="">
-            <?php } ?>
         </div>
     </div>
-</div>
-
-                
-<!-- <div class="row">
-<div class="col-md-6 col-12">
-    <h6>Nama Barang</h6>
-    <div class="form-group position-relative has-icon-right">
-        <div class="select-with-icon">
-            <select id="nama_barang" class="form-select" name="nama_barang" class="form-select" required>
-                <option value="">Pilih Nama Barang</option>
-                <?php
-                $sql = "SELECT namabarang FROM datanama";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $selected = ($row['namabarang'] == $nama_barang) ? 'selected' : '';
-                        echo "<option value='" . $row['namabarang'] . "' $selected>" . $row['namabarang'] . "</option>";
-                    }
-                }
-                ?>
-                <?php
-                $sql = "SELECT jenisperalatan FROM jenisnama";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $selected = ($row['jenisperalatan'] == $jenis_peralatan) ? 'selected' : '';
-                        echo "<option value='" . $row['jenisperalatan'] . "' $selected>" . $row['jenisperalatan'] . "</option>";
-                    }
-                }
-                ?>
-            </select>
-
-        </div>
-    </div> -->
-
-          
-                  <!-- <div class="col-md-6 col-12">
-                    <div class="form-group">
-                      <label for="merk" class="form-label"
-                        >Merk</label
-                      >
-                      <input
-                        type="text"
-                        id="merk"
-                        class="form-control"
-                        name="merk"
-                        placeholder="Merk"
-                        value="<?php echo $merk; ?>"
-                        required
-
-                                    
-                      />
-                    </div>
-                  </div> -->
-                  <!-- <div class="col-md-6 col-12">
-                    <div class="">
-                      <label for="sn" class="form-label"
-                        >Serial Number</label
-                      >
-                      <input
-                        type="text"
-                        id="sn"
-                        class="form-control"
-                        name="sn"
-                        placeholder="Serial Number"
-                        value="<?php echo $sn; ?>"
-                        required
-                      />
-                    </div>
-                  </div> -->
 
                   <div class="col-md-6 col-12">
                     <div class="form-group">
@@ -381,9 +261,6 @@ if (isset($_GET["ubah"])) {
                     </div>
                   </div>
 
-                  
-                  <?php if (isset($_GET["status"]) && $_GET["status"] === 'keluar') { ?>
-    <?php } ?>
                   <div class="col-md-6 col-12">
                   <div class="form-group">
     <label for="foto" class="form-label">Foto Barang</label>
@@ -423,7 +300,7 @@ if (isset($_GET["ubah"])) {
                                         Tambahkan
                                     </button>
                                 <?php } ?>
-                                <a href="barangMasuk.php" type="button" class="btn icon icon-left btn-danger me-1 mb-1" id="batal">
+                                <a href="semuabarang.php" type="button" class="btn icon icon-left btn-danger me-1 mb-1" id="batal">
                                 <i class="bi bi-reply"></i>
                                     Batal
                                 </a>

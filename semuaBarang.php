@@ -1,8 +1,3 @@
-<!-- PEEERRRHATTTIIIIANNNNNN
-KHUUUUSUUUSS FILLLEEE IINNNIIII
-REEESUULLLTT DIIIGANTTTII KEEEE ROOOOWWWW -->
-
-
 
 <?php
 
@@ -59,6 +54,19 @@ if (
   <link rel="stylesheet" href="./assets/compiled/css/table-datatable-jquery.css">
   <link rel="stylesheet" href="./assets/compiled/css/app.css">
   <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
+    <script src="assets/extensions/jquery/jquery.min.js"></script>
+    <script src="assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/static/js/pages/datatables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
 </head>
 
 <body>
@@ -121,26 +129,6 @@ if (
                 
 
             </li>
-
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangmasuk.php" class='sidebar-link'>
-                    <i class="bi bi-list-ul"></i>
-                    <span>Barang Masuk</span>
-                </a>
-                
-
-            </li>
-
-            <li
-                class="sidebar-item">
-                <a href="barangRusak.php" class='sidebar-link'>
-                    <i class="bi bi-trash3-fill"></i>
-                    <span>Barang Rusak</span>
-                </a>
-                
 
             </li>
 
@@ -221,70 +209,53 @@ if (
                 
             </div>
         <div class="card-header">
-
+                <a href="kelola.php?status=masuk" class="btn icon icon-left btn-warning"><i data-feather="plus"></i>Tambah Barang</a>
+                <a href="pilihKeluar.php" class="btn icon icon-left btn-warning"><i data-feather="plus"></i>Tambah Barang Rusak</a>
                 <button id="btnPrintDetail" class="btn icon icon-left btn-primary"><i data-feather="printer"></i> Print</button>
                 <button id="btnExcel" class="btn icon icon-left btn-success"><i class="bi bi-file-earmark-excel"></i> Download Excel</button>
                 <button id="btnPDF" class="btn icon icon-left btn-danger"><i class="bi bi-file-earmark-pdf"></i> Download PDF</button>
                 </div>
                 
-                
-                <!-- FILTER DISINI WOOII-->
-                <div class="container card-body">
-                    <div class="row">
-                    <form class="form" method="POST" action="">
-                    <div class="col-6 ">
-                        <div class="form-group">
-                        <label>Date:</label>
-                        <input type="date" class="form-control" placeholder="Start"  name="date1" value="<?php echo isset(
-                            $_POST["date1"]
-                        )
-                            ? $_POST["date1"]
-                            : ""; ?>" />
-                        </div>
-                    </div>
-    
-                    <div class="col-6 ">
-                        <div class="form-group">
-                        <label>To</label>
-            <input type="date" class="form-control" placeholder="End"  name="date2" value="<?php echo isset(
-                $_POST["date2"]
-            )
-                ? $_POST["date2"]
-                : ""; ?>"/>
-                        </div>
-                    </div>
-          
-            <div class="col-6">
-                <label>Status Barang</label>
-    
-                <select name="status" class="form-select">
-                    <option value="">Status</option>
-                    <option value="masuk" <?php isset($_GET["status"]) == true
-                        ? ($_GET["status"] == "masuk"
-                            ? "selected"
-                            : "")
-                        : ""; ?> >Barang Masuk</option>
-                    <option value="keluar" <?php isset($_GET["status"]) == true
-                        ? ($_GET["status"] == "keluar"
-                            ? "selected"
-                            : "")
-                        : ""; ?> >Barang Keluar</option>
-                </select>
             </div>
-            <br>
-            <button class="btn btn-primary" name="search"><span class="bi bi-search"></span></button> 
-            <a href="index.php" type="button" class="btn btn-success"><span class="bi bi-arrow-clockwise"></span></a>
-        </form>
-    
-        
-    </div>
+            <div class="card-header"><script>
+                        $(document).ready(function() {
+                            table = $('#table1').DataTable({
+                            dom: '<"d-flex justify-content-between"lf>tip',
+                                aLengthMenu: [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]],
+                                buttons: [
+                            {
+                                extend: 'excelHtml5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            },
+                            {
+                                extend: 'print',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            },
+                            {
+                                extend: 'pdfHtml5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4],
+                                }
+                            }
+                        ]
 
-                </div>
-                
+                            });
+                            $('#btnExcel').on('click', function() {
+                                table.button(0).trigger(); 
+                            });
+                            $('#btnPrintDetail').on('click', function() {
+                                table.button(1).trigger(); 
+                            });
+                            $('#btnPDF').on('click', function() {
+                                table.button(2).trigger(); 
+                            });
+                        });
+                    </script> 
 
-            </div>
-            <div class="card-header">
-                
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -394,84 +365,12 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
     
     <script src="assets/compiled/js/app.js"></script>
     
-
-    
-<script src="assets/extensions/jquery/jquery.min.js"></script>
-<script src="assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="assets/static/js/pages/datatables.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.dataTables.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
 <script>
     function confirmDelete(id, origin) {
         $('#danger').modal('show');
         // Set the href attribute of the "Ya" button to the deletion URL
         $('.btn-danger-confirm').attr('href', 'proses.php?hapus=' + id + '&origin=' + origin);
     }
-</script>
-<script>
-    var table;
-    $(document).ready(function(){
-        table = $('#table1').DataTable({
-            "bDestroy": true,
-            "paging": false,
-            search: {
-        return: false
-    },
-            "aLengthMenu": [[25,50,100,200,-1], [25,50,100,200, "All"]],
-            iDisplayLength: 25,
-            dom: 'lrt',
-            buttons: [
-                {
-                    extend: 'excel',
-                    class: 'buttons-excel',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 1, 3,4,5,6,7,8,9]
-                    }
-                },
-                {
-                    extend: 'print',
-                    class: 'buttons-print',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 1, 3,4,5,6,7,8,9]
-                    }
-                },
-                {
-                    extend: 'pdf',
-                    class: 'buttons-pdf',
-                    init: function(api, node, config){
-                        $(node).hide();
-                    },
-                    exportOptions: {
-                        columns: [0, 1, 3,4,5,6,7,8,9]
-                    }
-                }
-            ]
-        });
-    });
-
-    $('#btnExcel').on('click', function() {
-        table.button('.buttons-excel').trigger();
-    });
-    $('#btnPrintDetail').on('click', function() {
-        table.button('.buttons-print').trigger();
-    });
-    $('#btnPDF').on('click', function() {
-        table.button('.buttons-pdf').trigger();
-    });
 </script>
 </body>
 
