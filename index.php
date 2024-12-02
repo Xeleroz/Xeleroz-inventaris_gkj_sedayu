@@ -282,7 +282,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
     },
     labels: [
     "Jumlah Barang Masuk",
-    "Jumlah Barang Keluar"
+    "Jumlah Barang Rusak"
 ],
 
     responsive: [{
@@ -504,7 +504,7 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
             ); ?></td>
             <td><?php 
                 if ($result["status"] == 'masuk') {
-                    echo "Tidak Keluar";
+                    echo "-";
                 } else {
                     echo !empty($result["tanggal_keluar"])
                         ? (new DateTime($result["tanggal_keluar"]))->format("d-m-Y")
