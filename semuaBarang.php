@@ -1,4 +1,3 @@
-
 <?php
 
 include "auth.php";
@@ -255,7 +254,6 @@ if (
                             });
                         });
                     </script> 
-
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -301,9 +299,12 @@ while ($row = mysqli_fetch_assoc($result)) { ?>
         } ?>
     </td>
     <td><?php echo $row["keterangan"]; ?></td>
-    <td><img src="./uploads/<?php echo $row[
-        "foto"
-    ]; ?>" alt="Photo" style="max-width: 100px; max-height: 100px;"></td>
+    <td>
+    <img src="./uploads/<?php echo $row["foto"]; ?>" 
+         alt="Photo" 
+         style="width: 3cm; height: 3cm; object-fit: cover;">
+</td>
+
 <td>
 
         <a href="#" onclick="confirmDelete(<?php echo $row [

@@ -528,7 +528,8 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
             </td> 
             <td><img src="./uploads/<?php echo $result[
                 "foto"
-            ]; ?>" alt="Photo" style="max-width: 100px; max-height: 100px;"></td>
+            ]; ?>" alt="Photo" style="width: 2.5cm; height: 2.5cm; object-fit: cover;"></td>
+
         </tr>
     <?php if ($row_count >= 10) {
         // Break the loop if 3 rows are reached
