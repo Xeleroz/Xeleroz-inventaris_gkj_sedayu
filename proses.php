@@ -117,13 +117,19 @@ if (isset($_GET["hapus"])) {
 
 if ($_POST["aksi"] == "keluar") {
     $id = $_POST["id"];
-
-    // $sql = "SELECT * FROM masuk WHERE id = '$id'";
-    $query = "UPDATE masuk SET status = 'keluar' WHERE id = '$id'";
+    
+    // Mengupdate status barang menjadi 'keluar' dan juga update keterangan & tanggal keluar
+    $tanggal_keluar = $_POST["tanggal_keluar"];
+    $keterangan = $_POST["keterangan"];
+    
+    // Query untuk memperbarui data barang menjadi keluar
+    $query = "UPDATE masuk SET status = 'keluar', tanggal_keluar = '$tanggal_keluar', keterangan = '$keterangan' WHERE id = '$id'";
     $sql = mysqli_query($conn, $query);
 
     if ($sql) {
-        header("location: semuabarang.php");
+        // Redirect kembali ke halaman semuabarang.php setelah berhasil
+        header("Location: semuabarang.php");
+        exit;
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }
