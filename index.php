@@ -548,13 +548,10 @@ while ($row = mysqli_fetch_assoc($resultKeluar)) {
 
 
 
-            <footer>
+<footer>
     <div class="footer clearfix mb-0 text-muted">
         <div class="float-start">
             <p>copyright &copy; Gereja Kristen Jawa Sedayu</p>
-        </div>
-        <div class="float-end" id="footerText">
-            <p><a href="#"> Tim IT Universitas Kristen Duta Wacana</a></p>
         </div>
     </div>
 </footer>
