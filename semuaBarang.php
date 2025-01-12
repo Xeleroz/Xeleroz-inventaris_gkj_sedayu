@@ -66,35 +66,10 @@ if (
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
+    <script src="assets/static/js/initTheme.js"></script>
 </head>
 
 <body>
-
-
-    
-    <script src="assets/static/js/initTheme.js"></script>
-    <script src="assets/static/js/initTheme.js"></script>
-    <script>
-    window.onload = function() {
-        var logo = document.querySelector('.logoBMKG img');
-        var toggleDark = document.getElementById('toggle-dark');
-
-        toggleDark.addEventListener('click', function() {
-            if (this.checked) {
-                logo.src = './assets/compiled/png/logo.png'; // Change to your dark logo path
-            } else {
-                logo.src = './assets/compiled/png/logoblack.png'; // Change to your light logo path
-            }
-            // Reload the page only if dark theme is selected
-                location.reload();
-        });
-
-        // Check the initial theme setting on page load
-        if (!toggleDark.checked) {
-            logo.src = './assets/compiled/png/logoGKJ.jpeg'; // Set the initial logo based on light theme
-        }
-    };
-</script>
     <div id="app">
         
         <div id="sidebar">
@@ -102,7 +77,7 @@ if (
                 
     <div class="sidebar-header position-relative m-0">
         <div class="justify-content-between align-items-center">
-        <div class="logoBMKG" style="display: flex; justify-content: center; align-items: center;">
+        <div class="logoGKJ" style="display: flex; justify-content: center; align-items: center;">
                     <a href="index.php"><img src="./assets/compiled/png/logoGKJ.jpeg" alt="Logo" style="width: 150px; height: auto;" srcset=""></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-4">
@@ -225,19 +200,19 @@ if (
                             {
                                 extend: 'excelHtml5',
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4],
+                                    columns: [0, 1, 2, 3, 4, 5],
                                 }
                             },
                             {
                                 extend: 'print',
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4],
+                                    columns: [0, 1, 2, 3, 4, 5],
                                 }
                             },
                             {
                                 extend: 'pdfHtml5',
                                 exportOptions: {
-                                    columns: [0, 1, 2, 3, 4],
+                                    columns: [0, 1, 2, 3, 4, 5],
                                 }
                             }
                         ]

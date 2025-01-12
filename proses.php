@@ -9,14 +9,10 @@ if (isset($_POST["aksi"])) {
         $tanggal_keluar = $_POST["tanggal_keluar"];
         $id_barang = $_POST["id_barang"];
         $nama_barang = $_POST["nama_barang"];
-        $jenis_peralatan = $_POST["jenis_peralatan"];
-        $merk = $_POST["merk"];
-        $sn = $_POST["sn"];
+
         $asal_perolehan = $_POST["asal_perolehan"];
         $harga = $_POST["harga"];
         $status = $_POST["status"];
-        $lokasi = $_POST["lokasi"]; // Added lokasi
-        $teknisi = $_POST["teknisi"]; // Added teknisi
         $foto = $_FILES["foto"]["name"];
         $file = $_FILES["file"]["name"];
         $keterangan = $_POST["keterangan"];
@@ -29,7 +25,7 @@ if (isset($_POST["aksi"])) {
         move_uploaded_file($tmpFile2, $dir . $file);
 
 
-        $query = "INSERT INTO masuk VALUES(null, '$tanggal','$tanggal_keluar', '$id_barang', '$nama_barang', '$jenis_peralatan', '$merk', '$sn', '$asal_perolehan','$harga','$status','$lokasi','$teknisi','$foto','$file','$keterangan')";
+        $query = "INSERT INTO masuk VALUES(null, '$tanggal','$tanggal_keluar', '$id_barang', '$nama_barang', '$asal_perolehan','$harga','$status', '$foto','$file','$keterangan')";
         $sql = mysqli_query($conn, $query);
 
         if ($sql) {
@@ -46,13 +42,8 @@ if (isset($_POST["aksi"])) {
         $tanggal = $_POST["tanggal"];
         $tanggal_keluar = $_POST["tanggal_keluar"];
         $nama_barang = $_POST["nama_barang"];
-        $jenis_peralatan = $_POST["jenis_peralatan"];
-        $merk = $_POST["merk"];
-        $sn = $_POST["sn"];
         $asal_perolehan = $_POST["asal_perolehan"];
         $harga = $_POST["harga"];
-        $lokasi = $_POST["lokasi"];
-        $teknisi = $_POST["teknisi"];
         $keterangan = $_POST["keterangan"];
     
         // Retrieve existing data
@@ -79,7 +70,7 @@ if (isset($_POST["aksi"])) {
         }
     
         // Update the database
-        $query = "UPDATE masuk SET tanggal='$tanggal',tanggal_keluar='$tanggal_keluar', nama_barang='$nama_barang',jenis_peralatan='$jenis_peralatan',merk='$merk',sn='$sn',asal_perolehan='$asal_perolehan',harga='$harga',keterangan='$keterangan', foto='$foto', file='$file', status='$status', lokasi='$lokasi', teknisi='$teknisi' WHERE id='$id'";
+        $query = "UPDATE masuk SET tanggal='$tanggal',tanggal_keluar='$tanggal_keluar', nama_barang='$nama_barang', asal_perolehan='$asal_perolehan',harga='$harga',keterangan='$keterangan', foto='$foto', file='$file', status='$status' WHERE id='$id'";
         $sql = mysqli_query($conn, $query);
     
         if ($sql) {

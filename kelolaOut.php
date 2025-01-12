@@ -24,11 +24,6 @@ $no = 0;
 <body>
     <script src="assets/static/js/initTheme.js"></script>
     <script src="assets/static/js/initTheme.js"></script>
-    <script>
-    window.onload = function() {
-        var logo = document.querySelector('.logoBMKG img');
-    };
-</script>
 <div id="app">
         
         <div id="sidebar">
@@ -36,7 +31,7 @@ $no = 0;
                 
             <div class="sidebar-header position-relative m-0">
         <div class="justify-content-between align-items-center">
-        <div class="logoBMKG" style="display: flex; justify-content: center; align-items: center;">
+        <div class="logoGKJ" style="display: flex; justify-content: center; align-items: center;">
                     <a href="index.php"><img src="./assets/compiled/png/logoGKJ.jpeg" alt="Logo" style="width: 150px; height: auto;" srcset=""></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-4">

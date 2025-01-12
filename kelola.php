@@ -9,37 +9,32 @@ $sql = mysqli_query($conn, $query);
 $no = 0;
 
 $tanggal = "";
-// $barcode = "";
 $id_barang = "";
 $nama_barang = "";
-$jenis_peralatan = "";
-$merk = "";
-$sn = "";
 $asal_perolehan = "";
-// $jumlah_barang = "";
 $harga = "";
 $foto = '';
 $keterangan = "";
 
-if (isset($_GET["ubah"])) {
-    $id = $_GET["ubah"];
-    $queryEdit = "SELECT * FROM masuk WHERE id = '$id';";
-    $sqlEdit = mysqli_query($conn, $queryEdit);
-    $result = mysqli_fetch_assoc($sqlEdit);
-    $tanggal = $result["tanggal"];
-    $tanggal_keluar = $result["tanggal_keluar"];
-    $id_barang = $result["id_barang"];
-    $nama_barang = $result["nama_barang"];
-    $jenis_peralatan = $result["jenis_peralatan"];
-    $merk = $result["merk"];
-    $sn = $result["sn"];
-    $asal_perolehan = $result["asal_perolehan"];
-    $harga = $result["harga"];
-    $lokasi = $result["lokasi"];
-    $teknisi = $result["teknisi"];
-    $foto = $result['foto'];
-    $keterangan = $result["keterangan"];
-}
+// if (isset($_GET["ubah"])) {
+//     $id = $_GET["ubah"];
+//     $queryEdit = "SELECT * FROM masuk WHERE id = '$id';";
+//     $sqlEdit = mysqli_query($conn, $queryEdit);
+//     $result = mysqli_fetch_assoc($sqlEdit);
+//     $tanggal = $result["tanggal"];
+//     $tanggal_keluar = $result["tanggal_keluar"];
+//     $id_barang = $result["id_barang"];
+//     $nama_barang = $result["nama_barang"];
+//     $jenis_peralatan = $result["jenis_peralatan"];
+//     $merk = $result["merk"];
+//     $sn = $result["sn"];
+//     $asal_perolehan = $result["asal_perolehan"];
+//     $harga = $result["harga"];
+//     $lokasi = $result["lokasi"];
+//     $teknisi = $result["teknisi"];
+//     $foto = $result['foto'];
+//     $keterangan = $result["keterangan"];
+// }
 ?>
 
 <!DOCTYPE html>
@@ -64,12 +59,6 @@ if (isset($_GET["ubah"])) {
 
 <body>
 <script src="assets/static/js/initTheme.js"></script>
-<script>
-    window.onload = function() {
-        var logo = document.querySelector('.logoBMKG img');
-    };
-</script>
-
     <div id="app">
         
         <div id="sidebar">
@@ -77,7 +66,7 @@ if (isset($_GET["ubah"])) {
                 
     <div class="sidebar-header position-relative m-0">
         <div class="justify-content-between align-items-center">
-        <div class="logoBMKG" style="display: flex; justify-content: center; align-items: center;">
+        <div class="logoGKJ" style="display: flex; justify-content: center; align-items: center;">
                     <a href="index.php"><img src="./assets/compiled/png/logoGKJ.jpeg" alt="Logo" style="width: 150px; height: auto;" srcset=""></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-4">
@@ -319,7 +308,7 @@ if (isset($_GET["ubah"])) {
 
 
 
-<script>
+<!-- <script>
     // Function to hide footer text on small screens
     function toggleFooterText() {
         var footerText = document.getElementById('footerText');
@@ -333,7 +322,7 @@ if (isset($_GET["ubah"])) {
     // Call the function on page load and when the window is resized
     window.onload = toggleFooterText;
     window.onresize = toggleFooterText;
-</script>
+</script> -->
 
         </div>
     </div>
